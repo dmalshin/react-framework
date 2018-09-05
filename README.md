@@ -55,7 +55,10 @@ npm run lint:scss
 
 Запуск
 
-`npm start`
+```
+cd mocks
+npm start
+```
 
 ### Технологии:
 
