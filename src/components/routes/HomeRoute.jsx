@@ -1,3 +1,4 @@
 import React from 'react'
+import { ModuleName } from '../module-name'
 
-export const HomeRoute = () => <React.Fragment>Home</React.Fragment>
+export const HomeRoute = () => <ModuleName />
