@@ -2,13 +2,25 @@
 
 ## Команды
 
-Запуск
+Запуск дев-сервера
 
 `npm start`
+
+Запуск юнит-тестов
+
+`npm test`
 
 Билд для production
 
 `npm run build`
+
+Команды линтинга
+
+```
+npm run lint
+npm run lint:js
+npm run lint:scss
+```
 
 ## Основные библиотеки
 
