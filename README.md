@@ -10,6 +10,29 @@
 
 `npm run build`
 
+## Основные библиотеки
+
+### Для браузера
+
+- react
+- redux
+- redux-saga
+- reselect
+- react-router-dom
+- axios
+- lodash
+- luxon
+
+### Для разработки
+
+- jest
+- enzyme
+- sass
+- redux-devtools
+- eslint
+- prettier
+- stylelint
+
 ## Mock-сервер
 
 ### Расположение
