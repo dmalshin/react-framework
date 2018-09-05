@@ -11,18 +11,20 @@ import { takeEvery } from 'redux-saga/effects'
 //     completed: true,
 //   }))
 
-function* completeAllSubtasks(action) {
+function* completeAllSubtasks() {
   yield null
-  // const { id, completed } = action.payload
-  // if (!completed) {
-  //   return
-  // }
-
-  // const task = yield select(getSingleTask, id)
-  // if (canFindIncompletedTask(task)) {
-  //   yield put(modifySubtasks(task.id, mapSubtasksToCompleted(task.subtasks)))
-  // }
 }
+// function* completeAllSubtasks(action) {
+// const { id, completed } = action.payload
+// if (!completed) {
+//   return
+// }
+
+// const task = yield select(getSingleTask, id)
+// if (canFindIncompletedTask(task)) {
+//   yield put(modifySubtasks(task.id, mapSubtasksToCompleted(task.subtasks)))
+// }
+// }
 
 export function* itemCompletionSaga() {
   yield takeEvery('SET_ITEM_COMPLETION', completeAllSubtasks)
