@@ -1,5 +1,15 @@
 # Ui-incident
 
+## Команды
+
+Запуск
+
+`npm start`
+
+Билд для production
+
+`npm run build`
+
 ## Mock-сервер
 
 ### Расположение
@@ -12,10 +22,6 @@
 
 `npm start`
 
-Билд для production
-
-`npm run build`
-
 ### Технологии:
 
 - node
@@ -25,6 +31,10 @@
 
 + [Get started](https://sailsjs.com/get-started)
 + [Sails framework documentation](https://sailsjs.com/documentation)
+
+## Прекоммит хуки
+
+- Форматирование измененных файлов через prettier
 
 ## Принятые практики
 
