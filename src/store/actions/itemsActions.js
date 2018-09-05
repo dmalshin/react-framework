@@ -11,9 +11,7 @@ export const fetchItems = () => (dispatch) => {
 
   return api
     .getItems()
-    .then(
-      (response) => dispatch(receiveItems(response.data))
-    )
+    .then((response) => dispatch(receiveItems(response.data)))
 }
 
 export const removeItem = (id) => (dispatch) => {
@@ -22,8 +20,7 @@ export const removeItem = (id) => (dispatch) => {
     payload: id,
   })
 
-  return api
-    .deleteItem(id)
+  return api.deleteItem(id)
 }
 
 export const addItem = (name) => (dispatch) => {
@@ -36,11 +33,10 @@ export const addItem = (name) => (dispatch) => {
     payload: itemProps,
   })
 
-  return api.createItem(itemProps).then(
-    (response) =>
-      dispatch({
-        type: actionTypes.ADD_CREATED_ITEM_DATA,
-        payload: response.data,
-      })
+  return api.createItem(itemProps).then((response) =>
+    dispatch({
+      type: actionTypes.ADD_CREATED_ITEM_DATA,
+      payload: response.data,
+    })
   )
 }

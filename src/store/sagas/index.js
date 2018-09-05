@@ -1,5 +1,5 @@
 import { itemCompletionSaga } from './itemsSagas'
 
-export const runAppSagas = connecteSagaMiddleware => {
+export const runAppSagas = (connecteSagaMiddleware) => {
   connecteSagaMiddleware.run(itemCompletionSaga)
 }
