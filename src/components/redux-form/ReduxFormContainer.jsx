@@ -1,9 +1,26 @@
 import React, { Component } from 'react'
+import { ReduxForm } from './ReduxForm'
 
 export class ReduxFormContainer extends Component {
-  componentDidMount() {}
+  // eslint-disable-next-line class-methods-use-this
+  getInitialValues() {
+    return {
+      preference: 'spaces',
+      newsletter: true,
+    }
+  }
+
+  submit = (values) => {
+    // eslint-disable-next-line no-alert
+    window.alert(JSON.stringify(values, null, 4))
+  }
 
   render() {
-    return <div>Form</div>
+    return (
+      <ReduxForm
+        onSubmit={this.submit}
+        initialValues={this.getInitialValues()}
+      />
+    )
   }
 }

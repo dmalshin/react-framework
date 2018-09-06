@@ -22,6 +22,11 @@ npm run lint:js
 npm run lint:scss
 ```
 
+## Поддерживаемые браузеры
+
+- Десктопные evergreen браузеры
+- Дисплеи шириной 1280px+
+
 ## Основные библиотеки
 
 ### Для браузера
@@ -29,6 +34,7 @@ npm run lint:scss
 - react
 - redux
 - redux-saga
+- redux-form
 - reselect
 - react-router-dom
 - axios
