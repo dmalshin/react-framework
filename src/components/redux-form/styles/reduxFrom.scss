@@ -69,3 +69,13 @@ form {
   color: #f5222d;
   margin-top: 4px;
 }
+
+.fields-array__row {
+  position: relative;
+}
+
+.fields-array__remove {
+  position: absolute;
+  left: 100%;
+  top: 2px;
+}
