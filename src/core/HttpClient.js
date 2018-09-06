@@ -1,9 +1,13 @@
 import axios from 'axios'
 
+const prodBackendUrl = window.APP_CONFIG.apiUrl
+const devBackendUrl = process.env.REACT_APP_API_URL
+
+const getBackendUrl = () =>
+  process.env.NODE_ENV === 'production' ? prodBackendUrl : devBackendUrl
+
 const HttpClient = axios.create({
-  baseURL: `${window.location.protocol}//${window.location.hostname}:${
-    process.env.REACT_APP_API_PORT
-  }`,
+  baseURL: getBackendUrl(),
 })
 
 export default HttpClient
