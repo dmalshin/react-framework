@@ -14,7 +14,7 @@ export const Form = (props) => {
   const { handleSubmit } = props
   return (
     <div className="app__column app__column_single redux-form">
-      <h2>Form</h2>
+      <h2>Form Example</h2>
       <form onSubmit={handleSubmit}>
         <Field
           name="firstname"

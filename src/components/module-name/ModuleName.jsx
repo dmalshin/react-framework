@@ -11,6 +11,6 @@ export class ModuleName extends Component {
   }
 
   render() {
-    return null
+    return <React.Fragment>Шаблон приложения успешно стартовал</React.Fragment>
   }
 }

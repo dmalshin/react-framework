@@ -141,7 +141,7 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: [paths.appSrc, paths.uiComponents],
             loader: require.resolve('babel-loader'),
             options: {
 
@@ -222,6 +222,10 @@ module.exports = {
                 },
               },
             ],
+          },
+          {
+            test: /\.svg$/,
+            use: 'raw-loader',
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.

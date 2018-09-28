@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 
 export const AppHeader = () => (
   <header>
-    <Link to="/">Home</Link>
+    <Link to="/">home</Link>
     <br />
-    <Link to="/form">Form</Link>
+    <Link to="/ui-components">ui-components demo</Link>
     <br />
-    <Link to="/test">Test</Link>
+    <Link to="/form">form example</Link>
+    <br />
   </header>
 )

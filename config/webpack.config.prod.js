@@ -146,7 +146,7 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: [paths.appSrc, paths.uiComponents],
             loader: require.resolve('babel-loader'),
             options: {
 
@@ -261,6 +261,10 @@ module.exports = {
               )
             ),
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+          },
+          {
+            test: /\.svg$/,
+            use: 'raw-loader',
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
