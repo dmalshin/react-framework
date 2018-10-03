@@ -31,7 +31,7 @@
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^3.0.1",
-    "ui-components": "^0.2.1"
+    "ui-components": "0.2.5"
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
