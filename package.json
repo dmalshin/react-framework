@@ -133,6 +133,10 @@
     "src/**/*.{js,jsx,json,scss,css}": [
       "prettier --config .prettierrc --write",
       "git add"
+    ],
+    "mocks/**/*.{js,json}": [
+      "prettier --config .prettierrc --write",
+      "git add"
     ]
   },
   "homepage": "."
