@@ -1,9 +1,9 @@
-const ItemsDelegate = require(`${
+const ItemsController = require(`${
   sails.config.appPath
-}/api/delegates/items/ItemsDelegate.js`)
+}/api/controllers/ItemsController.js`)
 
 module.exports = {
   generate() {
-    ItemsDelegate.initialize()
+    ItemsController.initialize()
   },
 }

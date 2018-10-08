@@ -51,31 +51,6 @@ npm run lint:scss
 - prettier
 - stylelint
 
-## Mock-сервер
-
-### Расположение
-
-`/mocks`
-
-### Команды
-
-Запуск
-
-```
-cd mocks
-npm start
-```
-
-### Технологии:
-
-- node
-- sails
-
-### Ссылки по sails
-
-+ [Get started](https://sailsjs.com/get-started)
-+ [Sails framework documentation](https://sailsjs.com/documentation)
-
 ## Прекоммит хуки
 
 - Форматирование измененных файлов через prettier
@@ -126,3 +101,27 @@ npm start
 │   ├── /styles/                # Scss стили не отдельных компонентов
 ├── /index.jsx                  # Точка входа в js код
 ```
+
+## Mock-сервер
+
+### Расположение
+
+`/mocks`
+
+### Команды
+
+Запуск
+
+```
+cd mocks
+npm start
+```
+
+### Технологии
+
+- node
+- sails
+
+### Документация sails
+
++ [Sails framework documentation](https://sailsjs.com/documentation)

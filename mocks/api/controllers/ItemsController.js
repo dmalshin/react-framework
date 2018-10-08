@@ -1,13 +1,12 @@
+/* global sails */
+
 /* global sails, Items */
 const fs = require('fs')
 const ejs = require('ejs')
 const _ = require('lodash')
 const uuidV4 = require('uuid').v4
-const TemplateDataService = require(`${
-  sails.config.appPath
-}/api/services/TemplateDataService`)
 const ItemTemplate = fs.readFileSync(
-  TemplateDataService.GET_DEFAULT_ITEM,
+  `${sails.config.appPath}/api/templates/ItemsTemplate.ejs`,
   'utf8'
 )
 
@@ -58,5 +57,9 @@ module.exports = {
     const id = req.param('id')
     const item = await Items.destroy({ id })
     res.json(item)
+  },
+
+  custom(req, res) {
+    res.ok('Custom endpoint')
   },
 }
