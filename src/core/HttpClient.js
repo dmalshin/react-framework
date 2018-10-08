@@ -10,4 +10,15 @@ const HttpClient = axios.create({
   baseURL: getBackendUrl(),
 })
 
+HttpClient.interceptors.response.use(
+  (response) => ({
+    ...response,
+    isOk: true,
+  }),
+  (error) => ({
+    error,
+    isOk: false,
+  })
+)
+
 export default HttpClient

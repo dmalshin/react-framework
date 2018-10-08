@@ -1,16 +1,28 @@
-/* eslint-disable */
 import React, { Component } from 'react'
-import { getItems } from '../../api'
+import { connect } from 'react-redux'
+import { fetchItemsStart } from '../../store/actions/itemsActions'
+import { getItems } from '../../store/reducers/itemsReducer'
 
-export class ModuleName extends Component {
+class ModuleNameComponent extends Component {
   componentDidMount() {
-    getItems().then(
-      (response) => console.log(response),
-      (error) => console.dir(error)
-    )
+    this.props.fetchItemsStart()
   }
 
   render() {
-    return <React.Fragment>Шаблон приложения успешно стартовал</React.Fragment>
+    const { items } = this.props
+    return (
+      <ul>
+        {items.map(({ id, name }) => (
+          <li key={id}>{name}</li>
+        ))}
+      </ul>
+    )
   }
 }
+
+export const ModuleName = connect(
+  (state) => ({
+    items: getItems(state),
+  }),
+  { fetchItemsStart }
+)(ModuleNameComponent)

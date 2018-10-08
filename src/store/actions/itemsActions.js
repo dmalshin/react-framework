@@ -1,42 +1,48 @@
 import * as actionTypes from './actionTypes'
-import * as api from '../../api'
 
-export const receiveItems = (payload) => ({
-  type: actionTypes.RECEIVE_ITEMS,
-  payload,
+export const fetchItemsStart = () => ({
+  type: actionTypes.FETCH_ITEMS_START,
 })
 
-export const fetchItems = () => (dispatch) => {
-  dispatch({ type: actionTypes.FETCH_ITEMS })
+export const fetchItemsSuccess = (items) => ({
+  type: actionTypes.FETCH_ITEMS_SUCCESS,
+  payload: items,
+})
 
-  return api
-    .getItems()
-    .then((response) => dispatch(receiveItems(response.data)))
-}
+export const fetchItemsFailure = (error) => ({
+  type: actionTypes.FETCH_ITEMS_FAILURE,
+  payload: error,
+})
 
-export const removeItem = (id) => (dispatch) => {
-  dispatch({
-    type: actionTypes.REMOVE_ITEM,
-    payload: id,
-  })
+export const removeItemStart = () => ({
+  type: actionTypes.REMOVE_ITEM_START,
+})
 
-  return api.deleteItem(id)
-}
+export const removeItemSuccess = (id) => ({
+  type: actionTypes.REMOVE_ITEM_SUCCESS,
+  payload: id,
+})
 
-export const addItem = (name) => (dispatch) => {
-  const itemProps = {
-    name,
-  }
+export const removeItemFailure = (error) => ({
+  type: actionTypes.REMOVE_ITEM_FAILURE,
+  payload: error,
+})
 
-  dispatch({
-    type: actionTypes.ADD_ITEM,
-    payload: itemProps,
-  })
+export const createItemStart = () => ({
+  type: actionTypes.FETCH_ITEMS_START,
+})
 
-  return api.createItem(itemProps).then((response) =>
-    dispatch({
-      type: actionTypes.ADD_CREATED_ITEM_DATA,
-      payload: response.data,
-    })
-  )
-}
+export const createItemSuccess = (items) => ({
+  type: actionTypes.FETCH_ITEMS_SUCCESS,
+  payload: items,
+})
+
+export const createItemFailure = (error) => ({
+  type: actionTypes.FETCH_ITEMS_FAILURE,
+  payload: error,
+})
+
+export const addItem = (item) => ({
+  type: actionTypes.ADD_CREATED_ITEM_DATA,
+  payload: item,
+})

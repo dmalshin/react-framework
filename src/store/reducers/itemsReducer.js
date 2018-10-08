@@ -18,7 +18,7 @@ const itemReducer = (state, action) => {
 
 const itemByIdReducer = (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.RECEIVE_ITEMS:
+    case actionTypes.FETCH_ITEMS_SUCCESS:
       return action.payload.reduce(
         (acc, item) => ({
           ...acc,
@@ -27,7 +27,7 @@ const itemByIdReducer = (state = {}, action) => {
         {}
       )
 
-    case actionTypes.ADD_ITEM:
+    case actionTypes.CREATE_ITEM_SUCCESS:
       return {
         ...state,
         new: itemReducer(null, action),
@@ -45,13 +45,13 @@ const itemByIdReducer = (state = {}, action) => {
 
 const itemIdsReducer = (state = [], action) => {
   switch (action.type) {
-    case actionTypes.RECEIVE_ITEMS:
+    case actionTypes.FETCH_ITEMS_SUCCESS:
       return action.payload.map((task) => task.id)
 
     case actionTypes.ADD_ITEM:
       return ['new', ...state]
 
-    case actionTypes.ADD_CREATED_ITEM_DATA:
+    case actionTypes.CREATE_ITEM_SUCCESS:
       return [...state.map((id) => (id === 'new' ? action.payload.id : id))]
 
     case actionTypes.REMOVE_ITEM:
@@ -68,7 +68,7 @@ export const itemsReducer = combineReducers({
 })
 
 export const getItems = (state) =>
-  state.tasks.allIds.map((id) => state.tasks.byId[id])
+  state.items.allIds.map((id) => state.items.byId[id])
 
 export const getSingleItem = (state, itemId) => state.items.byId[itemId]
 
