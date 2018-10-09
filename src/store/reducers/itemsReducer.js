@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { createSelector } from 'reselect'
-import omit from 'omit.js'
+import omit from 'lodash-es/omit'
 import * as actionTypes from '../actions/actionTypes'
 
 const itemReducer = (state, action) => {

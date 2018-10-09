@@ -19,7 +19,6 @@
     "lodash-es": "^4.17.10",
     "normalize.css": "^8.0.0",
     "object-assign": "4.1.1",
-    "omit.js": "^1.0.0",
     "react": "^16.5.0",
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.5.0",
