@@ -1,13 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'redux-little-router'
+import { menuLinks } from '../../config/menuLinks'
 
 export const AppHeader = () => (
   <header>
-    <Link to="/">home</Link>
-    <br />
-    <Link to="/ui-components">ui-components demo</Link>
-    <br />
-    <Link to="/form">form example</Link>
-    <br />
+    {menuLinks.map((link) => (
+      <React.Fragment key={link.name}>
+        <Link href={link.path}>{link.name}</Link>
+        <br />
+      </React.Fragment>
+    ))}
   </header>
 )

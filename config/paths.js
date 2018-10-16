@@ -50,7 +50,7 @@ module.exports = {
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp('src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
-  uiComponents: resolveApp('node_modules/ui-components'),
+  uiComponents: resolveApp('node_modules/@ern/ui-components'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
 };
