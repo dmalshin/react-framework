@@ -1,4 +1,4 @@
-import HttpClient from '../core/HttpClient'
+import HttpClient from '../lib/HttpClient'
 
 const basePath = '/api'
 

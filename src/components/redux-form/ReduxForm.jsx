@@ -7,7 +7,7 @@ import {
   minLength,
   maxLength,
   matchesPassword,
-} from '../../core/lib/validation'
+} from '../../lib/validation'
 import { Discounts } from './Discounts'
 
 export const Form = (props) => {
