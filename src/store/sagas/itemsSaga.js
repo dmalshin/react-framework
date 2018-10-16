@@ -38,6 +38,15 @@ function* remove(action) {
   )
 }
 
+export function* itemsNavigationSaga() {
+  const response = yield call(api.getItems)
+  yield put(
+    response.isOk
+      ? fetchItemsSuccess(response.data)
+      : fetchItemsFailure(response.error)
+  )
+}
+
 export function* itemsSaga() {
   yield takeLatest(actionTypes.FETCH_ITEMS_START, fetch)
   yield takeLatest(actionTypes.CREATE_ITEM_START, create)

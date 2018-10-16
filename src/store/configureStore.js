@@ -3,7 +3,8 @@ import thunk from 'redux-thunk'
 import createSagaMiddleware from 'redux-saga'
 import { createBrowserHistory } from 'history'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { runAppSagas } from './sagas'
+import { initializeCurrentLocation } from 'redux-little-router'
+import { rootSaga } from './sagas'
 import { routerMiddleware, routerEnhancer } from './reducers/routerReducer'
 import { rootReducer } from './reducers/rootReducer'
 
@@ -20,7 +21,10 @@ export const configureStore = () => {
     )
   )
 
-  runAppSagas(sagaMiddleware)
+  sagaMiddleware.run(rootSaga)
+
+  const initialRouterState = store.getState().router
+  store.dispatch(initializeCurrentLocation(initialRouterState))
 
   return store
 }
