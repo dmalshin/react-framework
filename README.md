@@ -115,6 +115,13 @@ cd mocks
 npm start
 ```
 
+Запуск с возможность дебага через Chrome devtools
+
+```
+cd mocks
+npm run debug
+```
+
 ### Технологии
 
 - node
