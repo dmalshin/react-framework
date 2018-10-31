@@ -1,1 +1,1 @@
-export * from './runAppSagas'
+export { rootSaga } from './rootSaga'

@@ -52,7 +52,6 @@ module.exports = {
   testsSetup: resolveApp('src/setupTests.js'),
   proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
-  uiComponents: resolveApp('node_modules/ui-components'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
 };

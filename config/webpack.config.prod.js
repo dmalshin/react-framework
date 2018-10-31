@@ -212,8 +212,6 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-            // TODO: ERNFNS-337
-            'ui-assets': '../../node_modules/ui-components/src/assets',
     },
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -276,7 +274,7 @@ module.exports = {
           // The preset includes JSX, Flow, and some ESnext features.
           {
             test: /\.(js|mjs|jsx)$/,
-            include: [paths.appSrc, paths.uiComponents],
+            include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
               customize: require.resolve(

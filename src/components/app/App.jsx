@@ -1,11 +1,14 @@
 import './styles/App.scss'
 import React from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
 import { AppHeader } from './AppHeader'
-import { AppRoutes } from '../routes/AppRoutes'
+import { Routes } from '../Routes'
 
 export const App = () => (
   <div className="app">
     <AppHeader />
-    <AppRoutes />
+    <ErrorBoundary>
+      <Routes />
+    </ErrorBoundary>
   </div>
 )

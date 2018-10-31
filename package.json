@@ -14,7 +14,6 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
-    "connected-react-router": "^4.4.1",
     "history": "^4.7.2",
     "lodash-es": "^4.17.10",
     "normalize.css": "^8.0.0",
@@ -26,10 +25,10 @@
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-form": "^7.4.2",
+    "redux-little-router": "^15.1.2",
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.3.0",
-    "reselect": "^3.0.1",
-    "ui-components": "0.2.5"
+    "reselect": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.1.0",
@@ -67,9 +66,9 @@
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
     "lint-staged": "^7.2.2",
+    "mini-css-extract-plugin": "0.4.3",
     "node-sass": "^4.9.3",
     "npm-run-all": "^4.1.3",
-    "mini-css-extract-plugin": "0.4.3",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.1.0",
     "postcss-flexbugs-fixes": "4.1.0",

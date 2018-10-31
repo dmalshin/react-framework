@@ -3,22 +3,28 @@ import thunk from 'redux-thunk'
 import createSagaMiddleware from 'redux-saga'
 import { createBrowserHistory } from 'history'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { connectRouter, routerMiddleware } from 'connected-react-router'
+import { initializeCurrentLocation } from 'redux-little-router'
+import { rootSaga } from './sagas'
+import { routerMiddleware, routerEnhancer } from './reducers/routerReducer'
 import { rootReducer } from './reducers/rootReducer'
-import { runAppSagas } from './sagas'
 
 export const history = createBrowserHistory()
 
 export const configureStore = () => {
-  const router = routerMiddleware(history)
   const sagaMiddleware = createSagaMiddleware()
 
   const store = createStore(
-    connectRouter(history)(rootReducer),
-    composeWithDevTools(applyMiddleware(router, thunk, sagaMiddleware))
+    rootReducer,
+    composeWithDevTools(
+      routerEnhancer,
+      applyMiddleware(thunk, routerMiddleware, sagaMiddleware)
+    )
   )
 
-  runAppSagas(sagaMiddleware)
+  sagaMiddleware.run(rootSaga)
+
+  const initialRouterState = store.getState().router
+  store.dispatch(initializeCurrentLocation(initialRouterState))
 
   return store
 }
